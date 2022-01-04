@@ -79,11 +79,6 @@ export default function Home(props) {
 
 export async function getStaticProps(ctx) {
   
-  // res.setHeader(
-  //   'Cache-Control',
-  //   'public, s-maxage=10, stale-while-revalidate=59'
-  // )
-  
   // Import modules in here that aren't needed in the component
   const cheerio = await import(`cheerio`)
   const axios = (await import(`axios`)).default
@@ -122,6 +117,6 @@ export async function getStaticProps(ctx) {
       bodyContent,
       headContent
     },
-    revalidate: 60,
+    revalidate: 3,
   }
 }
